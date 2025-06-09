@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferretería Constru Max - Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carousel.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="ConstruMax" class="logo">
+                <h1>Constru<span style="color:rgb(226, 136, 0);">Max</span></h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="agregados.html">Agregados</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <button id="cart-button" class="cart-button">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Carrusel Hero -->
+        <section class="hero">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/hero1.jpg" alt="Materiales de construcción">
+                        <div class="carousel-caption">
+                            <h2>Materiales de Calidad</h2>
+                            <p>Los mejores agregados para tus proyectos</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/hero2.jpg" alt="Ofertas especiales">
+                        <div class="carousel-caption">
+                            <h2>Ofertas Especiales</h2>
+                            <p>Descuentos en cemento y grava este mes</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/hero3.jpg" alt="Entrega a domicilio">
+                        <div class="carousel-caption">
+                            <h2>Entrega a Domicilio</h2>
+                            <p>Llevamos los materiales hasta tu obra</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control prev">&#10094;</button>
+                <button class="carousel-control next">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Quienes Somos -->
+        <section class="about-section">
+            <div class="container">
+                <h2 class="section-title">Quiénes Somos</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>ConstruMax es una ferretería especializada en materiales de construcción, con más de 15 años de experiencia en el mercado. Nos dedicamos a proveer los mejores agregados para tus proyectos de construcción, con calidad garantizada y precios competitivos.</p>
+                        <p>Nuestro equipo está formado por profesionales con amplio conocimiento en materiales de construcción, listos para asesorarte y ayudarte a encontrar exactamente lo que necesitas para tu obra.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="assets/hero2.jpg" alt="Nuestro equipo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nuestros Productos (Destacados) -->
+        <section class="featured-products">
+            <div class="container">
+                <h2 class="section-title">Nuestros Productos</h2>
+                <div id="featured-products-grid" class="products-grid"></div>
+                <div class="view-all">
+                    <a href="agregados.html" class="btn">Ver todos los productos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ConstruMax</h3>
+                    <p>Ferretería especializada en materiales de construcción y agregados para obra.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="agregados.html">Agregados</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: camila@construmax.com</p>
+                    <p>Teléfono: 30054921312</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ferretería ConstruMax. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sidebar del carrito -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu carrito</h3>
+            <button id="close-cart" class="close-cart">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Aquí van los items -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button id="checkout-btn" class="checkout-btn">Finalizar compra</button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+    <script>
+        // Mostrar solo 4 productos destacados en el inicio
+        document.addEventListener('DOMContentLoaded', () => {
+            const featuredProducts = products.slice(0, 4);
+            const featuredGrid = document.getElementById('featured-products-grid');
+            
+            featuredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-price">$${product.price.toFixed(2)}</p>
+                        <button class="add-to-cart btn" data-id="${product.id}">Agregar al carrito</button>
+                    </div>
+                `;
+                
+                featuredGrid.appendChild(productCard);
+            });
+            
+            // Agregar event listeners a los botones
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+        });
+    </script>
+</body>
+</html>

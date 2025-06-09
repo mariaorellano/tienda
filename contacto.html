@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferretería ConstruMax - Contacto</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="ConstruMax" class="logo">
+                <h1>Constru<span style="color:rgb(226, 136, 0);">Max</span></h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="agregados.html">Agregados</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+            </nav>
+            <button id="cart-button" class="cart-button">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="contact-section">
+                <h2 class="section-title">Contacto</h2>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Información de Contacto</h3>
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <p>Universidad Libre</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <p>30054921312</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">✉️</div>
+                            <p>camila@construmax.com</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">⏰</div>
+                            <p>Lunes a Viernes: 8:00 - 18:00<br>Sábados: 9:00 - 14:00</p>
+                        </div>
+                        
+                        <div class="social-media">
+                            <h3>Síguenos</h3>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon">📘</a>
+                                <a href="#" class="social-icon">📸</a>
+                                <a href="#" class="social-icon">🐦</a>
+                                <a href="#" class="social-icon">🔗</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Envíanos un Mensaje</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Nombre:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono:</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto:</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje:</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <h3>Ubicación</h3>
+                    <div class="map">
+                        <!-- Aquí iría el iframe de Google Maps -->
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.6650288347755!2d-74.79123322590966!3d10.988636655245532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d7b34ed1f0b%3A0x1e939491885d8050!2sUniversidad%20Libre%20Sede%20Centro!5e0!3m2!1ses-419!2sco!4v1749396464091!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p class="map-note">Mapa de ubicación de nuestra ferretería</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ConstruMax</h3>
+                    <p>Ferretería especializada en materiales de construcción y agregados para obra.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="agregados.html">Agregados</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: camila@construmax.com</p>
+                    <p>Teléfono: 30054921312</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ferretería ConstruMax. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
